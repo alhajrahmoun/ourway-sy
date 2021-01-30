@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag 'bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<h4 class="text-center"><%= link_to @post.category.name, category_path(@post.category) %></h4>
+<h4 class="text-center"><%= @post.title %></h4>
+
+<div class="row">
+  <div class="col-sm-12" id="logout">
+    <div class="comment-tabs">
+      <div class="tab-pane active" id="comments-logout">
+        <ul class="media-list">
+          <li class="media">
+            <div class="media-body">
+              <div class="well well-lg">
+                <h4 class="media-heading text-uppercase reviews"><%= @post.user_name %> </h4>
+                <p class="media-comment">
+                  <%= raw @post.content %>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row align-items-center">
+  <div class="col">
+    <div class="comment-tabs">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#comments-logout" role="tab" data-toggle="tab"><h4 class="reviews text-capitalize">التعليقات</h4></a></li>
+      </ul>
+      <% @post.comments.each do |comment| %>
+        <%= render partial: comment, locals: {name: comment.user_name, content: comment.content} %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

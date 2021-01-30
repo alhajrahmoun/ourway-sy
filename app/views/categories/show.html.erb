@@ -1,0 +1,5 @@
+<h4 class="text-center"><%= @category.name %></h4>
+
+<% @posts.each do |post|%>
+  <h4><%= link_to post.title, post_path(post) %></h4>
+<% end %>

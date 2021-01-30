@@ -1,0 +1,13 @@
+<%#= @title.encode!('windows-1256') %>
+<%# @page.children.each do |c| %>
+  <%#= c.at_css('a.username > strong').text.encode!('windows-1256') unless c.at_css('a.username strong').nil? %>
+<!--  </br>-->
+
+  <%#= raw c.at_css('blockquote.postcontent') %>
+
+<%# end %>
+<%= @posts.count %>
+</br>
+<% @posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %></br>
+<% end %>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <title>Ourway</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'bootstrap.rtl.min', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+    <h4 class="text-center"><%= link_to "الرئيسية", root_path %></h4>
+    <%= yield %>
+  </div>
+  </body>
+</html>
