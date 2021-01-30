@@ -2,13 +2,14 @@
 lock "~> 3.14.1"
 
 set :application, "Ourway"
-set :repo_url, "git@github.com:Bernovia/Zajel-API.git"
+set :repo_url, "git@github.com:mhdrahmoun/ourway-sy.git"
 set :rvm_type, :user
 set :rvm_ruby_version, '2.7.1'
+set :branch, 'main'
 
 set :deploy_to, '/home/mylestone/apps/ourway'
 
-# append :linked_files, "config/master.key", ".env"
+append :linked_files, "config/master.key"
 # append :linked_files, ".env.production"
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads storage}
 
@@ -30,7 +31,7 @@ set :puma_preload_app, false
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_restart_command, 'bundle exec puma'
-set :puma_service_unit_name, "puma"
+set :puma_service_unit_name, "ourway_puma"
 
 set :sidekiq_user, fetch(:user)
 
